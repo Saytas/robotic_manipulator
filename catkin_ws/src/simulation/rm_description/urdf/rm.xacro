@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<robot name="rm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Base link -->
+    <link name="base_link">
+        <visual>
+            <!-- Origin of the box -->
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <!-- Box size in meters -->
+                <box size="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- The circle joint between base_link and link_01 rotating around the z-axis -->
+    <joint name="base_link__link_01" type="revolute">
+        <axis xyz="0 0 1"/>
+        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 0.5"/>
+        <parent link="base_link"/>
+        <child link="link_01"/>
+    </joint>
+
+    <!-- Link 1-->
+    <link name="link_01">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.2"/>
+            <geometry>
+                <cylinder radius="0.35" length="0.4"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- The circle joint between link_01 and link_02 rotating around the z-axis -->
+    <joint name="link_01__link_02" type="revolute">
+        <axis xyz="0 1 0"/>
+        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 0.4"/>
+        <parent link="link_01"/>
+        <child link="link_02"/>
+    </joint>
+
+    <!-- Link 2-->
+    <link name="link_02">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.4"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- The circle joint between link_02 and link_03 rotating around the z-axis -->
+    <joint name="link_02__link_03" type="revolute">
+        <axis xyz="0 1 0"/>
+        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <parent link="link_02"/>
+        <child link="link_03"/>
+    </joint>
+
+    <!-- Link 3-->
+    <link name="link_03">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.4"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- The circle joint between link_03 and link_04 rotating around the z-axis -->
+    <joint name="link_03__link_04" type="revolute">
+        <axis xyz="0 1 0"/>
+        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <parent link="link_03"/>
+        <child link="link_04"/>
+    </joint>
+
+    <!-- Link 4-->
+    <link name="link_04">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.4"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.8"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- The circle joint between link_04 and link_05 rotating around the z-axis -->
+    <joint name="link_04__link_05" type="revolute">
+        <axis xyz="0 1 0"/>
+        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+        <origin rpy="0 0 0" xyz="0 0 0.8"/>
+        <parent link="link_04"/>
+        <child link="link_05"/>
+    </joint>
+
+    <!-- Link 5-->
+    <link name="link_05">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.125"/>
+            <geometry>
+                <cylinder radius="0.15" length="0.25"/>
+            </geometry>
+        </visual>
+    </link>
+</robot>
