@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <!-- We need Inertia and Collision properties for Gazebo simulation -->
+
     <!-- Creating m_joint function for joints-->
     <xacro:macro name="m_joint" params="name type axis_xyz origin_rpy origin_xyz parent child">
         <joint name="${name}" type="${type}">
@@ -13,8 +15,21 @@
     </xacro:macro>
 
     <!-- Creating m_link_cylinder function for links-->
-    <xacro:macro name="m_link_cylinder" params="name origin_rpy origin_xyz radius length">
+    <xacro:macro name="m_link_cylinder" params="name origin_rpy origin_xyz radius length mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
+            <!-- START Gazebo simulation properties -->
+            <inertial>
+                <mass value="${mass}"/>
+                <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+            </inertial>
+            <collision>
+                <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+                <geometry>
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+            </collision>
+            <!-- END START Gazebo simulation properties -->
             <visual>
                 <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
                 <geometry>
@@ -25,8 +40,21 @@
     </xacro:macro>
 
     <!-- Creating m_link_box function for link box-->
-    <xacro:macro name="m_link_box" params="name origin_rpy origin_xyz box_size">
+    <xacro:macro name="m_link_box" params="name origin_rpy origin_xyz box_size mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
+            <!-- START Gazebo simulation properties -->
+            <inertial>
+                <mass value="${mass}"/>
+                <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+            </inertial>
+            <collision>
+                <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+                <geometry>
+                    <box size="${box_size}"/>
+                </geometry>
+            </collision>
+            <!-- END START Gazebo simulation properties -->
             <visual>
                 <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
                 <geometry>
