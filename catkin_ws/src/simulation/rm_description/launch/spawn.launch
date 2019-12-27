@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <param name="robot_description" command="$(find xacro)xacro --inorder '$(find rm_description)/urdf/rm.xacro'"/>
+    <!-- ns is namespace -->
+    <group ns="/rm">
+        <!-- Robot model -->
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rm_description)/urdf/rm.xacro'"/>
+        <arg name="x" default="0"/>
+        <arg name="y" default="0"/>
+        <arg name="z" default="0.5"/>
 
-    <arg name="x" default="0"/>
-    <arg name="y" default="0"/>
-    <arg name="z" default="0.5"/>
+        <!-- Spawn the robot model -->
+        <node name="rm_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+              args="-urdf -param robot_description -model rm  -x $(arg x) -y $(arg y) -z $(arg z)"/>
 
-    <node name="rm_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-          args="-urdf -param robot_description -model mrm  -x $(arg x) -y $(arg y) -z $(arg z)"/>
+        <!-- Load the controllers / controllers config by defining some parameters -->
+        <rosparam command="load" file="$(find rm_description)/config/joints.yaml"/>
+
+        <!-- Controllers - To launch the controller - controller spawner -->
+        <node name="controller_spawner" pkg="controller_manager" type="spawner"
+                respawn="false" output="screen" ns="/rm"
+                args="--namespace=/rm
+                joint_state_controller
+                joint1_position_controller
+                joint2_position_controller
+                --timeout 60">
+        </node>
+    </group>
 </launch>
