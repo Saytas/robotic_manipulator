@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sytasch/ROS/robotic_manipulator/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sytasch/ROS/robotic_manipulator/catkin_ws/build
+CMAKE_BINARY_DIR = /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build
 
 # Utility rule file for roscpp_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/build: 
 .PHONY : simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 
 simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	cd /home/sytasch/ROS/robotic_manipulator/catkin_ws/build/simulation/rm_description && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build/simulation/rm_description && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 
 simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend:
-	cd /home/sytasch/ROS/robotic_manipulator/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sytasch/ROS/robotic_manipulator/catkin_ws/src /home/sytasch/ROS/robotic_manipulator/catkin_ws/src/simulation/rm_description /home/sytasch/ROS/robotic_manipulator/catkin_ws/build /home/sytasch/ROS/robotic_manipulator/catkin_ws/build/simulation/rm_description /home/sytasch/ROS/robotic_manipulator/catkin_ws/build/simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/src /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/src/simulation/rm_description /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build/simulation/rm_description /home/sytasch/GITHUB_CLONES/robotic_manipulator/catkin_ws/build/simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : simulation/rm_description/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
 
