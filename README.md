@@ -37,6 +37,7 @@ $ cd catkin_ws/src
 $ git clone https://github.com/Saytas/robotic_manipulator.git
 Or Alternatively create a package
 $ catkin_create_pkg "package_name" urdf
+$ catkin_create_pkg "package_name" rospy
 
 $ vi ~/rm_description/CMakeLists.txt
 Add dependencies
@@ -49,7 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 $ vi ~/rm_description/package.xml
 Add dependencies
-<build_depend>controller_manager</build_depend>
+  <build_depend>controller_manager</build_depend>
   <build_export_depend>controller_manager</build_export_depend>
   <exec_depend>controller_manager</exec_depend>
 
@@ -61,7 +62,8 @@ Add dependencies
   <build_export_depend>robot_state_publisher</build_export_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   
-$ vi 
+$ rostopic pub -1 /rm/joint2_position_controller/command std_msgs/Float64 "data: 0.0" 
+$ rostopic pub -1 /rm/joint1_position_controller/command std_msgs/Float64 "data: 0.0" 
 ```
 
    [Ubuntu 16.04]: <https://releases.ubuntu.com/16.04/>
