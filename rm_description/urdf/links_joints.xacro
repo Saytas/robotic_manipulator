@@ -4,14 +4,25 @@
     <!-- We need Inertia and Collision properties for Gazebo simulation -->
 
     <!-- Creating m_joint function for joints-->
-    <xacro:macro name="m_joint" params="name type axis_xyz origin_rpy origin_xyz parent child">
+    <xacro:macro name="m_joint" params="name type axis_xyz origin_rpy origin_xyz parent child limit_effort limit_lower_val limit_upper_val limit_vel">
         <joint name="${name}" type="${type}">
             <axis xyz="${axis_xyz}"/>
-            <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+            <limit effort="${limit_effort}" lower="${limit_lower_val}" upper="${limit_upper_val}" velocity="${limit_vel}"/>
             <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
             <parent link="${parent}"/>
             <child link="${child}"/>
         </joint>
+        <!-- To use the controllers, add a new element for each joint we want to control which is called transmission -->
+        <transmission name="trans_${name}">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${name}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="motor_${name}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+         </transmission>
     </xacro:macro>
 
     <!-- Creating m_link_cylinder function for links-->

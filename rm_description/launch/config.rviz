@@ -13,6 +13,9 @@ Panels:
         - /RobotModel1/Links1/base_link1
         - /RobotModel1/Links1/link_011
         - /RobotModel1/Links1/link_021
+        - /RobotModel1/Links1/link_031
+        - /RobotModel1/Links1/link_041
+        - /RobotModel1/Links1/link_051
       Splitter Ratio: 0.5
     Tree Height: 463
   - Class: rviz/Selection
@@ -89,6 +92,21 @@ Visualization Manager:
           Show Axes: true
           Show Trail: false
           Value: true
+        link_03:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        link_04:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
+        link_05:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -120,7 +138,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.08153105
+      Distance: 7.09500027
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -135,10 +153,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.425397992
+      Pitch: 0.450397849
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.770397902
+      Yaw: 2.54040074
     Saved: ~
 Window Geometry:
   Displays:
