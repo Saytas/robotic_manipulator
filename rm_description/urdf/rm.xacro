@@ -17,17 +17,7 @@
               iyy="170.667" iyz="0"
               izz="170.667"
               box_size="1 1 1" />
-<!--    <link name="base_link">-->
-<!--        <visual>-->
-<!--            &lt;!&ndash; Origin of the box &ndash;&gt;-->
-<!--            <origin rpy="0 0 0" xyz="0 0 0"/>-->
-<!--            <geometry>-->
-<!--                &lt;!&ndash; Box size in meters &ndash;&gt;-->
-<!--                <box size="1 1 1"/>-->
-<!--            </geometry>-->
-<!--        </visual>-->
-<!--    </link>-->
-
+  
   <!-- The circle joint between base_link and link_01 rotating around the z-axis -->
   <m_joint name="${l00}__${l01}" type="revolute"
            axis_xyz="0 0 1"
@@ -37,26 +27,7 @@
            limit_lower_val="-3.14"
            limit_upper_val="3.14"
            limit_vel="0.5" />
-  <!-- To use the controllers, add a new element for each joint we want to control which is called transmission -->
-  <!-- <transmission name="trans_${l00}__${l01}">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="${l00}__${l01}">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_${l00}__${l01}">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> -->
-
-<!--    <joint name="base_link__link_01" type="revolute">-->
-<!--        <axis xyz="0 0 1"/>-->
-<!--        <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>-->
-<!--        <origin rpy="0 0 0" xyz="0 0 0.5"/>-->
-<!--        <parent link="base_link"/>-->
-<!--        <child link="link_01"/>-->
-<!--    </joint>-->
-
+  
   <!-- Link 1-->         
   <m_link_cylinder name="${l01}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.2"
@@ -75,17 +46,7 @@
            limit_upper_val="0.5"
            limit_vel="0.5" />
   
-  <!-- <transmission name="trans_${l01}__${l02}">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="${l01}__${l02}">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_${l01}__${l02}">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> -->
-           
+  <!-- Link 2-->
   <m_link_cylinder name="${l02}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.4"
               mass="57.906"
@@ -102,7 +63,8 @@
            limit_lower_val="0"
            limit_upper_val="0.75"
            limit_vel="0.5" />
-           
+  
+  <!-- Link 3-->
   <m_link_cylinder name="${l03}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.4"
               mass="57.906"
@@ -119,7 +81,8 @@
            limit_lower_val="0"
            limit_upper_val="0.75"
            limit_vel="0.5" />
-           
+  
+  <!-- Link 4-->
   <m_link_cylinder name="${l04}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.4"
               mass="57.906"
@@ -136,7 +99,8 @@
            limit_lower_val="-3.14"
            limit_upper_val="3.14"
            limit_vel="0.5" />
-           
+  
+  <!-- Link 5-->
   <m_link_cylinder name="${l05}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.125"
               mass="18.056"

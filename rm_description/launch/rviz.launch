@@ -7,7 +7,6 @@
 
     <!-- Show in RViz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rm_description)/launch/config.rviz"/>
-    <!-- args="-d $(find rm_description)/launch/config.rviz"-->
     <!--  To add configuration file: args="-d $(find rm_description)/launch/config.rviz" -->
 
     <!-- Send fake joint values-->
