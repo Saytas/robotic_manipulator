@@ -29,13 +29,21 @@
            limit_vel="0.5" />
   
   <!-- Link 1-->         
-  <m_link_cylinder name="${l01}"
+  <!-- <m_link_cylinder name="${l01}"
               origin_rpy="0 0 0" origin_xyz="0 0 0.2"
               mass="157.633"
               ixx="13.235" ixy="0" ixz="0"
               iyy="13.235" iyz="0"
               izz="9.655"
-              length="0.4" radius="0.35" />
+              length="0.4" radius="0.35" /> -->
+  <m_link_mesh name="${l01}"
+            origin_rpy="0 0 0" origin_xyz="0 0 -0.1"
+            mass="157.633"
+            ixx="13.235" ixy="0" ixz="0"
+            iyy="13.235" iyz="0"
+            izz="9.655"
+            meshfile="package://rm_description/meshes/Link1-v2.stl"
+            meshscale="0.001 0.001 0.001" />
               
   <m_joint name="${l01}__${l02}" type="revolute"
            axis_xyz="0 1 0"
